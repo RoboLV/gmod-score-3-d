@@ -52,20 +52,29 @@ function ENT:Draw()
 		ScoreBG = Color( 0, 0, 255, 100 )
 		draw.RoundedBox(0,0,0, 1100, 90, ScoreBG)
 		draw.RoundedBox(0,520,90, 580, 20+(table.Count(Rules)*40), ScoreBG)
-
+		
+		-- Hostname
 		draw.SimpleText( GetHostName(), "ScoreBoardServer", 30 , 10 , Color(255, 255, 255, Motd_T), 0,0)
 		
-		textColor = Color(200, 200, 200, 255)
-		draw.SimpleText("Nick" , "Trebuchet24", 50, 65 , textColor, 0,0)
-		--draw.SimpleText("Team" , "Trebuchet24", 300, 65 , textColor, 0,0)
-		draw.SimpleText("Ping" , "Trebuchet24", 410, 65 , textColor, 0,0)
-		draw.SimpleText("Frags" , "Trebuchet24", 460, 65 , textColor, 0,0)
+		textColor = Color(200, 200, 200, 255) -- The colum name color
+		
+		--Colums         Name     Font      pos X   Y    Color    
+		draw.SimpleText("Nick" , "Trebuchet24", 50, 65 , textColor, 0,0)-- Colum Nick
+		--draw.SimpleText("Team" , "Trebuchet24", 300, 65 , textColor, 0,0) -- Colum Team
+		draw.SimpleText("Ping" , "Trebuchet24", 410, 65 , textColor, 0,0)-- Colum Ping
+		draw.SimpleText("Frags" , "Trebuchet24", 460, 65 , textColor, 0,0)-- Colum Frags
 		local i=0
+		
+		-- Spawn Rules
 		
 		for k,v in pairs(Rules) do
 			draw.SimpleText(v , "ScoreBoard1", 550, 60+(k*30) , Color(255, 255, 255, Motd_T), 0,0)
 		end
-
+		
+		-- End spawn rules
+		
+		-- The lop> Creating player line
+		
 		for k,v in pairs(player.GetAll()) do
 
 			Tem = team.GetName(v:Team())
@@ -84,11 +93,18 @@ function ENT:Draw()
 			Players_m=k
 		end
 		
+		-- Lop End
+		
+		
 		draw.RoundedBox(0,520,0, 580, -80, ScoreBG)
+		
+		-- Mini fix :3
 		maxpl = 1
 		if not game.SinglePlayer() then
 			maxpl = game.MaxPlayers( )
 		end
+		
+		-- Server info
 		draw.SimpleText("Map : "..game.GetMap(), "Trebuchet24", 540, -20 , Color(255, 255, 255, Motd_T), 0,0)
 		draw.SimpleText("Gamemode : "..gmod.GetGamemode().Name, "Trebuchet24", 540, -40 , Color(255, 255, 255, Motd_T), 0,0)
 		draw.SimpleText("Players "..table.Count( player.GetAll() ).."/"..maxpl, "Trebuchet24", 540, -60 , Color(255, 255, 255, Motd_T), 0,0)
