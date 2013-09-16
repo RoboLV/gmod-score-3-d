@@ -1,4 +1,3 @@
-
 local map = game.GetMap()
 
 local mapfile = "3D_Scoreboard.txt"
@@ -9,7 +8,7 @@ if not file.Exists( mapfile, "DATA" ) then
 	file.Write( mapfile, "" )
 end
 
---[[ !!! THIS not working ..... go to CL file!
+--[[ !!! THIS not working ..... go to CL file! ]]--
 
 if not file.Exists( rulesfile, "DATA" ) then
 	file.Write( mapfile, [[1. Respect the other players, not hinder them.
@@ -18,7 +17,7 @@ if not file.Exists( rulesfile, "DATA" ) then
 4. Do not spawn log and annoying construction.
 5. Disable or change the annoying sound of thrusters.]] )
 end
---]
+
 
 concommand.Add( "setscoreboard", function( ply )
 	if not ply:IsAdmin() or not ply:IsSuperAdmin() then return end
