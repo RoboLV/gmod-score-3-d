@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	"name"			"3D Scoreboard"
+	"version"		"1"
+	"up_date"		"16.09.2013"
+	"author_name"		"Robo LV"
+	"author_email"		""
+	"author_url"		""
+	"info"			""
+	"override"		"0"
+}
