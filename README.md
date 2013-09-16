@@ -5,4 +5,4 @@ Garrysmod 3D scoreboard
 
 USAGE :
 
-As player in console type "setscoreboard"
+As player(Admin/Super admin) in console type "setscoreboard"
